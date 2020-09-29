@@ -6,26 +6,23 @@ public class Voiture {
 	//Attributs de voiture
 	private String marque;
 	private String modele;
-	private int année;
+	private int annee;
 	private int nombrePorte;
 	
-	//Attributs partie moteur de la voiture
-	private int puissance;
-	private int nombreCylindre;
-	private String typeCarburant;
-	
-	
-	
+	private CaracMoteur partieMoteur = new CaracMoteur();
+
+
+
 	//Constructeur
-	public Voiture(String marque, String modele, int année, int nombrePorte, int puissance, int nombreCylindre,
+	public Voiture(String marque, String modele, int annee, int nombrePorte, int puissance, int nombreCylindre,
 			String typeCarburant) {
 		this.marque = marque;
 		this.modele = modele;
-		this.année = année;
+		this.annee = annee;
 		this.nombrePorte = nombrePorte;
-		this.puissance = puissance;
-		this.nombreCylindre = nombreCylindre;
-		this.typeCarburant = typeCarburant;
+		this.partieMoteur.setPuissance(puissance);
+		this.partieMoteur.setNombreCylindre(nombreCylindre);
+		this.partieMoteur.setTypeCarburant(typeCarburant);
 	}
 	
 	
@@ -42,11 +39,11 @@ public class Voiture {
 	public void setModele(String modele) {
 		this.modele = modele;
 	}
-	public int getAnnée() {
-		return année;
+	public int getAnnee() {
+		return annee;
 	}
-	public void setAnnée(int année) {
-		this.année = année;
+	public void setAnnee(int annee) {
+		this.annee = annee;
 	}
 	public int getNombrePorte() {
 		return nombrePorte;
@@ -55,22 +52,22 @@ public class Voiture {
 		this.nombrePorte = nombrePorte;
 	}
 	public int getPuissance() {
-		return puissance;
+		return partieMoteur.getPuissance();
 	}
 	public void setPuissance(int puissance) {
-		this.puissance = puissance;
+		this.partieMoteur.setPuissance(puissance);
 	}
 	public int getNombreCylindre() {
-		return nombreCylindre;
+		return partieMoteur.getNombreCylindre();
 	}
 	public void setNombreCylindre(int nombreCylindre) {
-		this.nombreCylindre = nombreCylindre;
+		this.partieMoteur.setNombreCylindre(nombreCylindre);
 	}
 	public String getTypeCarburant() {
-		return typeCarburant;
+		return partieMoteur.getTypeCarburant();
 	}
 	public void setTypeCarburant(String typeCarburant) {
-		this.typeCarburant = typeCarburant;
+		this.partieMoteur.setTypeCarburant(typeCarburant);
 	}
 	
 	
